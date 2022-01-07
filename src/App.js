@@ -1,13 +1,13 @@
-import { Typography } from "@mui/material";
-import "./App.css";
+import React from 'react';
+import './App.css';
+import Name from './components/Name';
+import ThemeConfig from './theme';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Typography variant="h4">Teja Chundru</Typography>
-      </header>
-    </div>
+    <ThemeConfig>
+      <Name />
+    </ThemeConfig>
   );
 }
 
