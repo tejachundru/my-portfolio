@@ -16,7 +16,7 @@ function responsiveFontSizes({ sm, md, lg }) {
   };
 }
 
-const FONT_PRIMARY = 'Fira Sans Condensed';
+const FONT_PRIMARY = 'Dancing Script';
 
 const typography = {
   fontFamily: FONT_PRIMARY,
