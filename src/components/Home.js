@@ -1,30 +1,39 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Typography, Grid, useTheme } from '@mui/material';
 import Teja from './TejaName';
-// import Background from './background';
+// import Developer from './developer';
+import WhatIDo from './WhatIDo';
 
 function Home() {
+  const theme = useTheme();
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        backgroundColor: '#020200',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <Typography
-        variant="h1"
-        sx={{
-          color: '#fff',
+    <>
+      <div
+        style={{
+          flex: 1,
+          backgroundColor: theme.palette.primary.light,
+          alignItems: 'center',
+          justifyContent: 'center',
+          flexDirection: 'column',
         }}
       >
-        Hi I&apos;m
-      </Typography>
-      <Teja />
-      {/* <Background /> */}
-    </div>
+        <Grid container flexDirection="row">
+          <Grid container flexDirection="row">
+            <Typography
+              variant="h1"
+              sx={{
+                color: '#fff',
+              }}
+            >
+              Hi I&apos;m
+            </Typography>
+            <Teja />
+          </Grid>
+        </Grid>
+        {/* <Developer /> */}
+      </div>
+      <WhatIDo />
+    </>
   );
 }
 

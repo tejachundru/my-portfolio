@@ -9,15 +9,15 @@ function Teja() {
     <svg
       id="svg"
       version="1.1"
-      width="800"
+      width="40%"
       height="300"
       viewBox="0, 0, 400,145.06437768240343"
       xmlns="http://www.w3.org/2000/svg"
     >
       <motion.path
-        // fill="#2525f4"
-        strokeWidth="3"
-        stroke="#ffffff"
+        fill="#fff55"
+        strokeWidth="2"
+        stroke="#fffffff4"
         strokeLinecap="round"
         initial={{ pathLength: 0 }}
         animate={{ pathLength: 1 }}
