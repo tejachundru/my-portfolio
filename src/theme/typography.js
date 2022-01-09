@@ -16,7 +16,7 @@ function responsiveFontSizes({ sm, md, lg }) {
   };
 }
 
-const FONT_PRIMARY = 'Dancing Script';
+const FONT_PRIMARY = 'Josefin Sans';
 
 const typography = {
   fontFamily: FONT_PRIMARY,

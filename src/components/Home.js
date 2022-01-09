@@ -1,7 +1,6 @@
 import React from 'react';
 import { Typography, Grid, useTheme } from '@mui/material';
 import Teja from './TejaName';
-// import Developer from './developer';
 import WhatIDo from './WhatIDo';
 
 function Home() {
@@ -30,7 +29,6 @@ function Home() {
             <Teja />
           </Grid>
         </Grid>
-        {/* <Developer /> */}
       </div>
       <WhatIDo />
     </>
