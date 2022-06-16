@@ -6,11 +6,33 @@ import React, { useRef, useState } from 'react';
 
 import Typewriter from 'typewriter-effect';
 
-function createGradient(color1, color2) {
-  return `linear-gradient(to bottom, ${color1}, ${color2})`;
-}
+const IMAGE_COUNT = 80;
 
-const IMAGECOUNT = 80;
+const TEXT_BLOCKS = [
+  'I am a Full Stack Developer',
+  'Can Work on ',
+  'Frontend - Web and Mobile Apps',
+  'Backend- Api development',
+];
+
+const PERCENT_MAP_RANGE = [
+  {
+    start: 0,
+    end: 25,
+  },
+  {
+    start: 25,
+    end: 45,
+  },
+  {
+    start: 45,
+    end: 60,
+  },
+  {
+    start: 60,
+    end: 80,
+  },
+];
 
 function WhatIDo() {
   const theme = useTheme();
@@ -25,10 +47,10 @@ function WhatIDo() {
     const offsetStart = rect.top + scrollTop;
     const offsetEnd = offsetStart + rect.height;
     if (value >= offsetStart / 2 && value <= offsetEnd) {
-      const totalLenghth = offsetEnd - offsetStart;
-      const scrollPercentage = (value - offsetStart / 2) / totalLenghth;
+      const totalLength = offsetEnd - offsetStart;
+      const scrollPercentage = (value - offsetStart / 2) / totalLength;
       setPercentage(scrollPercentage * 100);
-      setImageNO(Math.floor(scrollPercentage * IMAGECOUNT));
+      setImageNO(Math.floor(scrollPercentage * IMAGE_COUNT));
     }
   });
 
@@ -37,10 +59,7 @@ function WhatIDo() {
       ref={ref}
       style={{
         height: '500vh',
-        background: createGradient(
-          theme.palette.primary.light,
-          theme.palette.secondary.main
-        ),
+        background: theme.palette.gradients.primary,
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'column',
@@ -66,61 +85,27 @@ function WhatIDo() {
             marginTop: 10,
           }}
         >
-          {percentage && percentage > 10 && (
-            <Typography variant="h1">
-              {percentage < 25 ? (
-                <Typewriter
-                  onInit={(typewriter) => {
-                    typewriter
-                      .typeString('I am a Full Stack Developer')
-                      .start();
+          {TEXT_BLOCKS.map(
+            (text, index) =>
+              percentage &&
+              percentage > PERCENT_MAP_RANGE[index].start && (
+                <Typography
+                  variant="h2"
+                  sx={{
+                    fontWeight: theme.typography.fontWeightRegular,
                   }}
-                />
-              ) : (
-                'I am a Full Stack Developer'
-              )}
-            </Typography>
-          )}
-          {percentage && percentage > 25 && (
-            <Typography variant="h2">
-              {percentage < 45 ? (
-                <Typewriter
-                  onInit={(typewriter) => {
-                    typewriter.typeString('I build web applications').start();
-                  }}
-                />
-              ) : (
-                'I build web applications'
-              )}
-            </Typography>
-          )}
-          {percentage && percentage > 45 && (
-            <Typography variant="h2">
-              {percentage < 60 ? (
-                <Typewriter
-                  onInit={(typewriter) => {
-                    typewriter.typeString('I build mobile apps').start();
-                  }}
-                />
-              ) : (
-                'I build mobile apps'
-              )}
-            </Typography>
-          )}
-          {percentage && percentage > 60 && (
-            <Typography variant="h2">
-              {percentage < 80 ? (
-                <Typewriter
-                  onInit={(typewriter) => {
-                    typewriter
-                      .typeString('can work with Backend and Frontend')
-                      .start();
-                  }}
-                />
-              ) : (
-                'can work with Backend and Frontend'
-              )}
-            </Typography>
+                >
+                  {percentage < PERCENT_MAP_RANGE[index].end ? (
+                    <Typewriter
+                      onInit={(typewriter) => {
+                        typewriter.typeString(text).start();
+                      }}
+                    />
+                  ) : (
+                    text
+                  )}
+                </Typography>
+              )
           )}
         </Grid>
       </Grid>

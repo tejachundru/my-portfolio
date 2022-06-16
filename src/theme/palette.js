@@ -19,28 +19,11 @@ const GREY = {
 };
 
 const PRIMARY = {
-  lighter: '#C8FACD',
-  light: '#5BE584',
-  main: '#00AB55',
-  dark: '#007B55',
-  darker: '#005249',
-  contrastText: '#fff',
+  light: '#111111',
+  main: '#000000',
 };
 const SECONDARY = {
-  lighter: '#D6E4FF',
-  light: '#84A9FF',
-  main: '#3366FF',
-  dark: '#1939B7',
-  darker: '#091A7A',
-  contrastText: '#fff',
-};
-const INFO = {
-  lighter: '#D0F2FF',
-  light: '#74CAFF',
-  main: '#1890FF',
-  dark: '#0C53B7',
-  darker: '#04297A',
-  contrastText: '#fff',
+  main: '#111111',
 };
 const SUCCESS = {
   lighter: '#E9FCD4',
@@ -68,8 +51,7 @@ const ERROR = {
 };
 
 const GRADIENTS = {
-  primary: createGradient(PRIMARY.light, PRIMARY.main),
-  info: createGradient(INFO.light, INFO.main),
+  primary: createGradient(PRIMARY.main, PRIMARY.light),
   success: createGradient(SUCCESS.light, SUCCESS.main),
   warning: createGradient(WARNING.light, WARNING.main),
   error: createGradient(ERROR.light, ERROR.main),
@@ -79,14 +61,13 @@ const palette = {
   common: { black: '#000', white: '#fff' },
   primary: { ...PRIMARY },
   secondary: { ...SECONDARY },
-  info: { ...INFO },
   success: { ...SUCCESS },
   warning: { ...WARNING },
   error: { ...ERROR },
   grey: GREY,
   gradients: GRADIENTS,
   divider: GREY[500],
-  text: { primary: GREY[800], secondary: GREY[600], disabled: GREY[500] },
+  text: { primary: GREY[200], secondary: GREY[300], disabled: GREY[500] },
   background: { paper: '#fff', default: '#fff', neutral: GREY[200] },
   action: {
     active: GREY[600],

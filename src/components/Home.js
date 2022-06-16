@@ -10,19 +10,19 @@ function Home() {
       <div
         style={{
           flex: 1,
-          backgroundColor: theme.palette.primary.light,
+          backgroundColor: theme.palette.primary.main,
           alignItems: 'center',
           justifyContent: 'center',
           flexDirection: 'column',
         }}
       >
         <Grid container flexDirection="row">
-          <Grid container flexDirection="row">
+          <Grid container flexDirection="row" margin={4}>
             <Typography
               variant="h1"
-              sx={{
-                color: '#fff',
-              }}
+              // sx={{
+              //   color: '#fff',
+              // }}
             >
               Hi I&apos;m
             </Typography>
