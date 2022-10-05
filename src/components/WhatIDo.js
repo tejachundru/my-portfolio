@@ -6,13 +6,13 @@ import React, { useRef, useState } from 'react';
 
 import Typewriter from 'typewriter-effect';
 
-const IMAGE_COUNT = 80;
+const IMAGE_COUNT = 240;
 
 const TEXT_BLOCKS = [
   'I am a Full Stack Developer',
-  'Can Work on ',
-  'Frontend - Web and Mobile Apps',
-  'Backend- Api development',
+  '🏗️ with HTML,CSS,React,React native, Node, Express, Sql, Postgres',
+  '👨‍🔧 Web Apps 🖥️, Mobile Apps 📱 ',
+  '👨‍🔧 Api Development 📡 - REST, GraphQL,',
 ];
 
 const PERCENT_MAP_RANGE = [
@@ -75,14 +75,20 @@ function WhatIDo() {
         }}
       >
         <img
-          src={require(`./fullstack/fullstack-${imageNO + 1}.png`)}
+          src={require(`./fullstack/fullstack${imageNO + 1}.png`)}
           height="100%"
           width="40%"
           alt="asd"
+          style={{
+            position: 'absolute',
+            height: '100vh',
+            width: '100%',
+            zIndex: -1,
+          }}
         />
         <Grid
           sx={{
-            marginTop: 10,
+            margin: 10,
           }}
         >
           {TEXT_BLOCKS.map(
@@ -90,7 +96,7 @@ function WhatIDo() {
               percentage &&
               percentage > PERCENT_MAP_RANGE[index].start && (
                 <Typography
-                  variant="h2"
+                  variant="h4"
                   sx={{
                     fontWeight: theme.typography.fontWeightRegular,
                   }}

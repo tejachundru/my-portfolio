@@ -24,7 +24,7 @@ function Home() {
               //   color: '#fff',
               // }}
             >
-              Hi I&apos;m
+              I&apos;m
             </Typography>
             <Teja />
           </Grid>
