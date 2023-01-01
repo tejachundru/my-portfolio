@@ -20,7 +20,7 @@ git checkout -B main
 git add -A
 git commit -m 'deploy'
 
-git push -f git@github.com:tejachundru/myportfolio.github.io.git main
+# git push -f git@github.com:tejachundru/myportfolio.github.io.git main
 git push -f git@github.com:tejachundru/myportfolio.git main:gh-pages
 
 cd -
