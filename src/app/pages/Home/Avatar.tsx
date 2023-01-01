@@ -1,22 +1,38 @@
 import * as React from 'react';
 import { styled, keyframes } from '@mui/material/styles';
+import { type GlowTypes } from './types';
 
-const glowFrames = keyframes`
+// =========== CSS Animation ===========
+const glowFrames = (glowColor: string, glowSecondaryColor: string) => keyframes`
     from {
-        filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 15px #04035b)
-            drop-shadow(0 0 20px #160270);
+        filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 15px ${glowColor})
+            drop-shadow(0 0 25px  ${glowColor});
     }
     to {
-        filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 10px #0e4601)
-            drop-shadow(0 0 15px #134102);
+        filter: drop-shadow(0 0 15px #fff) drop-shadow(0 0 10px  ${
+          glowSecondaryColor + '80'
+        })
+            drop-shadow(0 0 5px  ${glowSecondaryColor});
     }
 `;
 
-const MyAvatarStyled = styled('svg')(({ theme }) => ({
-  animation: `${glowFrames} 1.5s ease-in-out infinite alternate`,
-}));
+const MyAvatarStyled = styled('svg')<React.SVGProps<SVGSVGElement> & GlowTypes>(
+  ({ theme, glowPrimaryColor, glowSecondaryColor }) => ({
+    animation: `${glowFrames(
+      glowPrimaryColor,
+      glowSecondaryColor,
+    )} 1s ease-in-out infinite alternate`,
+  }),
+);
 
-const MyAvatar = ({ glowColor = '#e60073', ...rest }) => {
+// =========== Avatar Component ===========
+type MyAvatarProps = GlowTypes;
+
+const MyAvatar = ({
+  glowPrimaryColor,
+  glowSecondaryColor,
+  ...rest
+}: MyAvatarProps) => {
   const a = '';
   return (
     <div>
@@ -28,6 +44,8 @@ const MyAvatar = ({ glowColor = '#e60073', ...rest }) => {
         {...rest}
         className="svg-shadow"
         role="img"
+        glowPrimaryColor={glowPrimaryColor}
+        glowSecondaryColor={glowSecondaryColor}
       >
         <path
           fill="#fff"

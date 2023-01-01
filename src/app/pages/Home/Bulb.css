@@ -1,25 +1,7 @@
-@keyframes swing {
-  from {
-    -moz-transform: rotate(3deg);
-    -webkit-transform: rotate(3deg);
-    transform: rotate(3deg);
-  }
-  to {
-    transform: rotate(-3deg);
-  }
-}
-
-.area {
-  animation: swing 1s infinite ease-in-out alternate;
-  transform-origin: top;
-  -moz-transform-origin: top;
-  -webkit-transform-origin: top;
-}
-
 .wire {
   position: relative;
   left: 98px;
-  height: 200px;
+  height: 220px;
   width: 4px;
   background-color: black;
 }
@@ -30,53 +12,24 @@
   width: 16px;
   height: 20px;
   left: 92px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
-.strip {
-  position: relative;
-  width: 18px;
-  height: 2px;
-  right: 1px;
-  top: 4px;
-  background-color: darkgrey;
-}
-
-.strip:nth-of-type(2) {
-  top: 7px;
-}
-
-.strip:nth-of-type(3) {
-  top: 10px;
-}
-
-.bulb {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  left: 80px;
-  bottom: 2px;
-  z-index: -1;
-  background-color: rgba(255, 255, 255, 0.85);
-  border-radius: 50%;
-  -webkit-box-shadow: 0px 0px 500px 77px rgb(255, 255, 255);
-  -moz-box-shadow: 0px 0px 500px 77px rgb(255, 255, 255);
-  box-shadow: 0px 0px 500px 77px rgb(255, 255, 255);
-}
-
-.zig {
+.filament {
   position: relative;
   background-color: transparent;
   width: 10px;
   height: 5px;
   border-radius: 5px / 2.5px;
   left: 14px;
-  border: grey solid 1px;
+  border: grey solid 1.5px;
 }
 
-.zig:nth-of-type(2) {
+.filament:nth-of-type(2) {
   top: -3px;
 }
 
-.zig:nth-of-type(3) {
+.filament:nth-of-type(3) {
   top: -6px;
 }
