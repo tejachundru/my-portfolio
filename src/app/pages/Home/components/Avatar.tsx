@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { styled, keyframes } from '@mui/material/styles';
-import { type GlowTypes } from './types';
+import { type GlowTypes } from '../types';
 
 // =========== CSS Animation ===========
 const glowFrames = (glowColor: string, glowSecondaryColor: string) => keyframes`

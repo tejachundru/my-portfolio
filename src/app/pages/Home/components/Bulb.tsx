@@ -4,7 +4,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 import './Bulb.css';
 import { styled, keyframes, type Theme } from '@mui/material/styles';
-import { type GlowTypes } from './types';
+import { type GlowTypes } from '../types';
 
 const bulbShadow = (
   glowPrimaryColor: string,
@@ -54,13 +54,9 @@ const BulbArea = styled('div')({
   WebkitTransformOrigin: 'top',
 });
 
-const Bulb = ({
-  glowPrimaryColor,
-  glowSecondaryColor,
-}: {
-  glowPrimaryColor: string;
-  glowSecondaryColor: string;
-}) => (
+type BulbProps = GlowTypes;
+
+const Bulb = ({ glowPrimaryColor, glowSecondaryColor }: BulbProps) => (
   <Box
     sx={{
       position: 'absolute',
