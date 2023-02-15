@@ -2,3 +2,21 @@
   margin: 0 auto;
   padding: 2rem;
 }
+
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  background-color: white;
+  mix-blend-mode: difference;
+  z-index: 999;
+  pointer-events: none;
+}
+
+* {
+  cursor: none;
+  box-sizing: border-box;
+}

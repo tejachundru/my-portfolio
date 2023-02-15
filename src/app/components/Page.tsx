@@ -23,7 +23,7 @@ function Page({ children, title = '', meta, ...other }: PageProps) {
       <Box
         {...other}
         sx={{
-          backgroundColor: 'background.default',
+          backgroundColor: 'd5d5d5',
         }}
       >
         {children}
