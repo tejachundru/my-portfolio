@@ -1,6 +1,6 @@
-import { Grid, Typography, Stack, useTheme } from '@mui/material';
-import { Box } from '@mui/system';
+import { Grid, Typography, Stack, useTheme, Box, styled } from '@mui/material';
 import React from 'react';
+import DetailShowCase from '../../components/DetailShowCase';
 // Import AppParticles from '../../components/AppParticles';
 import NeonText from '../../components/NeonText';
 import Page from '../../components/Page';
@@ -8,6 +8,16 @@ import MyAvatar from './components/Avatar';
 // Import Bulb from './components/Bulb';
 import { myData } from './details';
 import { type GlowTypes } from './types';
+
+const OnHoverEmoji = styled(Typography)({
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  '&:hover': {
+    opacity: 1,
+    display: 'inline',
+  },
+  opacity: 0,
+  fontSize: '2rem',
+});
 
 function Home() {
   const theme = useTheme();
@@ -36,22 +46,11 @@ function Home() {
           </Stack>
         </Grid>
         <Grid item>
-          {Object.keys(myData).map(key => (
-            <Stack direction="column" key={key}>
-              <Typography
-                variant="h5"
-                {...commonProps}
-                sx={{
-                  color: theme.palette.primary.light,
-                }}
-              >
-                {key}
-              </Typography>
-              <Typography variant="h4" color="white">
-                {myData[key]}
-              </Typography>
+          {myData.map(data => (
+            <Box key={data.key}>
+              <DetailShowCase detail={data} />
               <br />
-            </Stack>
+            </Box>
           ))}
         </Grid>
       </Grid>
