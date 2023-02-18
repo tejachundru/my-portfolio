@@ -24,7 +24,7 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.6.1",
     "react-spring": "^9.6.1",
-    "tsparticles": "^2.7.1"
+    "tsparticles": "^2.8.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.3",
