@@ -6,8 +6,11 @@ import './App.css';
 import Routes from './app/routes';
 import ThemeProvider from './theme';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { initAnalytics } from './utils/analytics';
+import usePageTracking from './app/routes/usePageTracking';
 
 function App() {
+  initAnalytics();
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 

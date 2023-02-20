@@ -28,7 +28,7 @@ const NeonText = ({
   <Typography
     {...rest}
     sx={{
-      color: 'white',
+      color: theme => theme.palette.text.primary,
       animation: `${textShadow(
         glowPrimaryColor,
         glowSecondaryColor,

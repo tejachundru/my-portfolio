@@ -1,5 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import Blog from '../pages/Blog/Loadable';
 import Home from '../pages/Home/Loadable';
 
 const UserRoutes = {
@@ -10,6 +11,10 @@ const UserRoutes = {
     {
       path: '/',
       element: <Home />,
+    },
+    {
+      path: 'blog',
+      element: <Blog />,
     },
   ],
 };

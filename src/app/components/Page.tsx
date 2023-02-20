@@ -20,14 +20,7 @@ function Page({ children, title = '', meta, ...other }: PageProps) {
         <title>{`${title}`}</title>
         {meta}
       </Helmet>
-      <Box
-        {...other}
-        sx={{
-          backgroundColor: 'd5d5d5',
-        }}
-      >
-        {children}
-      </Box>
+      <Box {...other}>{children}</Box>
     </>
   );
 }
