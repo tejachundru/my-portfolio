@@ -13,7 +13,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.11.2",
-    "@reduxjs/toolkit": "^1.9.1",
+    "@reduxjs/toolkit": "^1.9.2",
     "eslint-config-prettier": "^8.5.0",
     "framer-motion": "^9.0.3",
     "mixpanel-browser": "^2.45.0",
