@@ -9,11 +9,6 @@ export type DetailType = {
 
 export const myData: DetailType[] = [
   {
-    key: 'Name',
-    value: 'Teja Chundru',
-    emoji: '😊',
-  },
-  {
     key: 'Profession',
     value: 'Software Engineer',
     emoji: '👨🏻‍💻',
@@ -52,7 +47,7 @@ export const myData: DetailType[] = [
     emoji: '📚',
   },
   {
-    key: 'hobbies',
+    key: 'Hobbies',
     value:
       'I like to watch movies, listen to music, read books, travel, and explore new things',
     emoji: '🎨',

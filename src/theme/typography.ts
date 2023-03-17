@@ -25,7 +25,7 @@ function responsiveFontSizes({
   };
 }
 
-const FONT_PRIMARY = 'Righteous, sans-serif';
+const FONT_PRIMARY = 'Montserrat, sans-serif';
 
 const typography = {
   fontFamily: FONT_PRIMARY,

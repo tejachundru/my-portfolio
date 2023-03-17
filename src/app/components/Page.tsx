@@ -15,13 +15,18 @@ const defaultProps: Omit<PageProps, 'children'> = {
 
 function Page({ children, title = '', meta, ...other }: PageProps) {
   return (
-    <>
+    <Box
+      sx={{
+        display: 'flex',
+        px: { xs: 2, sm: 3, md: 4 },
+      }}
+    >
       <Helmet>
         <title>{`${title}`}</title>
         {meta}
       </Helmet>
       <Box {...other}>{children}</Box>
-    </>
+    </Box>
   );
 }
 

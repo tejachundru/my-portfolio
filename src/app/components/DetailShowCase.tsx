@@ -26,14 +26,14 @@ function DetailShowCase({ detail }: { detail: DetailType }) {
 
   return (
     <Box>
-      <Typography variant="h4" color="primary.light">
+      <Typography variant="body1" color="primary.light">
         {detail.key}
       </Typography>
       <Stack direction={'row'} alignItems="center" spacing={0.5}>
         <OnHoverTypography variant="h4" color="white" {...commonProps}>
           {detail.emoji}
         </OnHoverTypography>
-        <Typography variant="h5">{detail.value}</Typography>
+        <Typography variant="h1">{detail.value}</Typography>
       </Stack>
     </Box>
   );

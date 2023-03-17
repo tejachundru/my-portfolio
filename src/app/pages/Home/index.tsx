@@ -8,6 +8,14 @@ import MyAvatar from './components/Avatar';
 // Import Bulb from './components/Bulb';
 import { myData } from './details';
 import { type GlowTypes } from './types';
+import {
+  motion,
+  type MotionValue,
+  useScroll,
+  type Variants,
+} from 'framer-motion';
+
+function useParallax(value: MotionValue<number>, distance: number) {}
 
 const OnHoverEmoji = styled(Typography)({
   // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -18,6 +26,12 @@ const OnHoverEmoji = styled(Typography)({
   opacity: 0,
   fontSize: '2rem',
 });
+
+// Const scaleX = useSpring(scrollYProgress, {
+//   stiffness: 100,
+//   damping: 30,
+//   restDelta: 0.001,
+// });
 
 function Home() {
   const theme = useTheme();
@@ -46,11 +60,44 @@ function Home() {
           </Stack>
         </Grid>
         <Grid item>
-          {myData.map(data => (
-            <Box key={data.key}>
-              <DetailShowCase detail={data} />
-              <br />
-            </Box>
+          {myData.map((data, index) => (
+            <motion.div
+              key={data.key}
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.8 }}
+              onViewportLeave={() => {
+                console.log('left');
+              }}
+            >
+              <Box>
+                <motion.div
+                  className="card"
+                  key={data.key}
+                  variants={{
+                    offscreen: {
+                      opacity: 0,
+                      x:
+                        Math.random() > 0.5
+                          ? -Math.floor(Math.random() * 400) - 400
+                          : Math.floor(Math.random() * 200) + 600,
+                    },
+                    onscreen: {
+                      opacity: 1,
+                      x: 0,
+                      y: 0,
+                    },
+                  }}
+                  transition={{
+                    duration: Math.random() * 0.5 + 1,
+                    ease: 'easeInOut',
+                  }}
+                >
+                  <DetailShowCase detail={data} />
+                  <br />
+                </motion.div>
+              </Box>
+            </motion.div>
           ))}
         </Grid>
       </Grid>
