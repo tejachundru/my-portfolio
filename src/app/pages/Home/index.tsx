@@ -77,6 +77,7 @@ function Home() {
                   variants={{
                     offscreen: {
                       opacity: 0,
+                      scale: 2,
                       x:
                         Math.random() > 0.5
                           ? -Math.floor(Math.random() * 400) - 400
@@ -84,12 +85,13 @@ function Home() {
                     },
                     onscreen: {
                       opacity: 1,
+                      scale: 1,
                       x: 0,
                       y: 0,
                     },
                   }}
                   transition={{
-                    duration: Math.random() * 0.5 + 1,
+                    duration: Math.random() * 0.5 + 0.5,
                     ease: 'easeInOut',
                   }}
                 >

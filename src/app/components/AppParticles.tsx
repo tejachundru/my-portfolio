@@ -15,7 +15,7 @@ const AppParticles = () => {
   return (
     <Particles
       id="tsparticles"
-      init={particlesInit}
+      // Init={particlesInit}
       style={{
         position: 'absolute',
         backgroundColor: '#323031',
