@@ -24,6 +24,8 @@
     --input: 220 13% 91%;
     --ring: 262.1 83.3% 57.8%;
     --radius: 0.5rem;
+    --graph-paper: 10px;
+    --graph-paper-foreground: #22222210;
   }
 
   .dark {
@@ -46,6 +48,8 @@
     --border: 215 27.9% 16.9%;
     --input: 215 27.9% 16.9%;
     --ring: 263.4 70% 50.4%;
+    --graph-paper: 10px;
+    --graph-paper-foreground: #22222299;
   }
 }
 
@@ -55,6 +59,18 @@
   }
   body {
     @apply bg-background text-foreground;
+
     font-feature-settings: "rlig" 1, "calt" 1;
+    background-size: var(--graph-paper) var(--graph-paper);
+    background-image: linear-gradient(
+        to right,
+        var(--graph-paper-foreground) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        var(--graph-paper-foreground) 1px,
+        transparent 1px
+      );
   }
 }
