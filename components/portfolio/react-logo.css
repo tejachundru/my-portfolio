@@ -1,0 +1,171 @@
+.box {
+  position: relative;
+  margin: auto;
+  display: block;
+  /*optional background or border*/
+  margin-top: 2%;
+  width: 600px;
+  height: 450px;
+  background: none;
+}
+
+.center {
+  position: absolute;
+  top: 38%;
+  left: 46%;
+  width: 12%;
+  height: 15%;
+  background: #ffffff;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.ring-1 {
+  position: absolute;
+  top: 32%;
+  left: 28%;
+  width: 46%;
+  height: 26%;
+  background: none;
+  border-radius: 45%;
+  border: solid 6px #ffffff;
+  /* -webkit-clip-path: polygon(
+    0% 0%,
+    0% 100%,
+    10% 100%,
+    10% 11%,
+    90% 11%,
+    89% 91%,
+    9% 91%,
+    8% 100%,
+    100% 100%,
+    100% 0%
+  );
+  clip-path: polygon(
+    0% 0%,
+    0% 100%,
+    10% 100%,
+    10% 11%,
+    90% 11%,
+    89% 91%,
+    9% 91%,
+    8% 100%,
+    100% 100%,
+    100% 0%
+  ); */
+  animation: spinMe-1 1s 4s 1;
+}
+
+.ring-2 {
+  position: absolute;
+  top: 32%;
+  left: 28%;
+  width: 46%;
+  height: 26%;
+  background: none;
+  border-radius: 45%;
+  border: solid 6px #ffffff;
+  /* -webkit-clip-path: polygon(
+    0% 0%,
+    0% 100%,
+    10% 100%,
+    10% 11%,
+    90% 11%,
+    89% 91%,
+    9% 91%,
+    8% 100%,
+    100% 100%,
+    100% 0%
+  );
+  clip-path: polygon(
+    0% 0%,
+    0% 100%,
+    10% 100%,
+    10% 11%,
+    90% 11%,
+    89% 91%,
+    9% 91%,
+    8% 100%,
+    100% 100%,
+    100% 0%
+  ); */
+  transform: rotate(59deg);
+  animation: spinMe-2 2s 4s 1;
+}
+
+.ring-3 {
+  position: absolute;
+  top: 32%;
+  left: 28%;
+  width: 46%;
+  height: 26%;
+  background: none;
+  border-radius: 45%;
+  border: solid 6px #ffffff;
+  /* -webkit-clip-path: polygon(
+    0% 0%,
+    0% 100%,
+    10% 100%,
+    10% 11%,
+    90% 11%,
+    89% 91%,
+    9% 91%,
+    8% 100%,
+    100% 100%,
+    100% 0%
+  );
+  clip-path: polygon(
+    0% 0%,
+    0% 100%,
+    10% 100%,
+    10% 11%,
+    90% 11%,
+    89% 91%,
+    9% 91%,
+    8% 100%,
+    100% 100%,
+    100% 0%
+  ); */
+  transform: rotate(-59deg);
+  animation: spinMe-3 3s 4s 1;
+}
+
+@keyframes spinMe-1 {
+  0% {
+    transform: rotate(0deg);
+    border: solid 6px #ffffff;
+  }
+  50% {
+    border: solid 12px #ffffff;
+  }
+  100% {
+    transform: rotate(360deg);
+    border: solid 6px #ffffff;
+  }
+}
+@keyframes spinMe-2 {
+  0% {
+    transform: rotate(0deg);
+    border: solid 6px #ffffff;
+  }
+  50% {
+    border: solid 12px #ffffff;
+  }
+  100% {
+    transform: rotate(419deg);
+    border: solid 6px #ffffff;
+  }
+}
+@keyframes spinMe-3 {
+  0% {
+    transform: rotate(0deg);
+    border: solid 6px #ffffff;
+  }
+  50% {
+    border: solid 12px #ffffff;
+  }
+  100% {
+    transform: rotate(301deg);
+    border: solid 6px #ffffff;
+  }
+}
