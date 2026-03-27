@@ -1,0 +1,108 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.9/schema.json",
+  "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
+  "files": { "ignoreUnknown": false },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 80,
+    "attributePosition": "auto",
+    "bracketSameLine": false,
+    "bracketSpacing": true,
+    "expand": "auto",
+    "useEditorconfig": true,
+    "includes": [
+      "**",
+      "!**/cache",
+      "!**/.cache",
+      "!**/package.json",
+      "!**/package-lock.json",
+      "!**/public",
+      "!**/CHANGELOG.md",
+      "!**/.yarn",
+      "!**/dist",
+      "!**/node_modules",
+      "!**/.next",
+      "!**/build",
+      "!**/.contentlayer",
+      "**",
+      "!**/cache",
+      "!**/.cache",
+      "!**/package.json",
+      "!**/package-lock.json",
+      "!**/public",
+      "!**/CHANGELOG.md",
+      "!**/.yarn",
+      "!**/dist",
+      "!**/node_modules",
+      "!**/.next",
+      "!**/build",
+      "!**/.contentlayer"
+    ]
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": false,
+      "correctness": {
+        "noNextAsyncClientComponent": "warn",
+        "useJsxKeyInIterable": "off"
+      },
+      "performance": {
+        "noImgElement": "warn",
+        "noUnwantedPolyfillio": "warn",
+        "useGoogleFontPreconnect": "warn"
+      },
+      "style": { "noHeadElement": "warn", "useBlockStatements": "off" },
+      "suspicious": {
+        "noDocumentImportInPage": "error",
+        "noHeadImportInDocument": "error",
+        "useGoogleFontDisplay": "warn"
+      }
+    },
+    "includes": [
+      "**",
+      "!dist/*",
+      "!**/.cache",
+      "!**/public",
+      "!**/node_modules",
+      "!**/*.esm.js",
+      "**",
+      "!dist/*",
+      "!**/.cache",
+      "!**/public",
+      "!**/node_modules",
+      "!**/*.esm.js"
+    ]
+  },
+  "javascript": {
+    "formatter": {
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "es5",
+      "semicolons": "asNeeded",
+      "arrowParentheses": "always",
+      "bracketSameLine": false,
+      "quoteStyle": "double",
+      "attributePosition": "auto",
+      "bracketSpacing": true
+    }
+  },
+  "html": {
+    "formatter": {
+      "indentScriptAndStyle": false,
+      "selfCloseVoidElements": "always"
+    }
+  },
+  "overrides": [
+    { "includes": ["*.ts", "*.tsx"] },
+    { "includes": ["*.ts", "*.tsx"] }
+  ],
+  "assist": {
+    "enabled": true,
+    "actions": { "source": { "organizeImports": "on" } }
+  }
+}
